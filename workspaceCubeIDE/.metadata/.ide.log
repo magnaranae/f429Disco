@@ -1,0 +1,5 @@
+2020-06-02 19:55:12,445 [INFO] Activator:176 - 
+
+
+2020-06-02 19:55:12,448 [INFO] Activator:177 - !SESSION log4j initialized
+2020-06-02 19:56:19,461 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] swt-tree-arrow-mode and swt-tree-arrow-color are not supported on this platform
