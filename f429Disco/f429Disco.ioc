@@ -994,6 +994,7 @@ Mcu.Name=STM32F429ZITx
 PA2.Signal=GPXTI2
 PA13.GPIO_Label=SWDIO
 PD14.Signal=FMC_D0_DA0
+NVIC.EXTI0_IRQn=true\:5\:0\:false\:false\:true\:true\:true\:true
 PF0.GPIO_PuPd=GPIO_NOPULL
 PA7.GPIO_Label=ACP_RST
 PA12.Mode=RGB565
