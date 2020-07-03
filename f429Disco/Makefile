@@ -88,7 +88,8 @@ Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c \
 Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c \
 Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c \
-Src/app_touchgfx.c 
+Src/app_touchgfx.c \
+Src/syscalls.c
 
 # CPP sources
 CPP_SOURCES =  \
@@ -163,7 +164,14 @@ C_INCLUDES =  \
 -IMiddlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \
--ISrc
+-ISrc \
+-IMiddlewares/ST/TouchGFX/touchgfx/framework/include \
+-ITouchGFX/generated/fonts/include \
+-ITouchGFX/gui/include \
+-ITouchGFX/generated/gui_generated/include \
+-ITouchGFX/generated/images/include \
+
+
 
 
 # compile gcc flags
