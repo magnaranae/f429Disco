@@ -96,6 +96,20 @@ Src/syscalls.c \
 CPP_SOURCES =  \
 Src/TouchGFXConfiguration.cpp \
 TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
+TouchGFX/generated/texts/src/Texts.cpp \
+TouchGFX/generated/texts/src/LanguageGb.cpp \
+Src/TouchGFXHAL.cpp \
+TouchGFX/target/STM32F4DMA.cpp \
+TouchGFX/gui/src/common/FrontendApplication.cpp \
+TouchGFX/generated/images/src/BitmapDatabase.cpp \
+TouchGFX/gui/src/gardendata_screen/gardenDataView.cpp \
+TouchGFX/gui/src/model/Model.cpp \
+TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+Src/STM32TouchController.cpp \
+TouchGFX/gui/src/gardendata_screen/gardenDataPresenter.cpp \
+TouchGFX/generated/fonts/src/FontGetters.cpp \
+Src/TouchGFXGeneratedHAL.cpp \
+
 
 # ASM sources
 ASM_SOURCES =  \
@@ -172,7 +186,7 @@ C_INCLUDES =  \
 -ITouchGFX/gui/include \
 -ITouchGFX/generated/gui_generated/include \
 -ITouchGFX/generated/images/include \
-
+-ITouchGFX/target \
 
 
 
@@ -197,8 +211,8 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT = STM32F429ZITx_FLASH.ld
 
 # libraries
-LIBS = -lc -lm -lnosys  -ltouchgfx-float-abi-hard
-LIBDIR = 
+LIBS = -lc -lm -lnosys  -ltouchgfx-float-abi-hard -lstdc++
+LIBDIR = "-L./Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m4f/gcc/"
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 ##### Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m4f/gcc/
 # default action: build all
