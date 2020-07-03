@@ -89,11 +89,13 @@ Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c \
 Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c \
 Src/app_touchgfx.c \
-Src/syscalls.c
+Src/syscalls.c \
+
 
 # CPP sources
 CPP_SOURCES =  \
-Src/TouchGFXConfiguration.cpp
+Src/TouchGFXConfiguration.cpp \
+TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
 
 # ASM sources
 ASM_SOURCES =  \
@@ -195,10 +197,10 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT = STM32F429ZITx_FLASH.ld
 
 # libraries
-LIBS = -lc -lm -lnosys 
+LIBS = -lc -lm -lnosys  -ltouchgfx-float-abi-hard
 LIBDIR = 
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
-
+##### Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m4f/gcc/
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
