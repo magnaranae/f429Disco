@@ -211,7 +211,13 @@ void OTG_HS_IRQHandler(void)
 void LTDC_IRQHandler(void)
 {
   /* USER CODE BEGIN LTDC_IRQn 0 */
-
+    if (LTDC->ISR & 1){
+        LTDC->ICR = 1;
+        if (LTDC->LIPCR == (LTDC->AWCR & 0x7FF) - 1){
+            //entering active area
+     //       OSWrappers::signalVSync();
+        }
+    }
   /* USER CODE END LTDC_IRQn 0 */
   HAL_LTDC_IRQHandler(&hltdc);
   /* USER CODE BEGIN LTDC_IRQn 1 */
